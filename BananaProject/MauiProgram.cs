@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using BananaProject.ViewModel;
+using BananaProject.Views;
+using Microsoft.Extensions.Logging;
 
 namespace BananaProject;
 
@@ -15,7 +17,8 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
-
+		builder.Services.AddSingleton<MessageBoard>();
+		builder.Services.AddSingleton<MessageViewModel>();
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif

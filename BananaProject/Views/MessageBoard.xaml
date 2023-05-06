@@ -3,21 +3,46 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BananaProject.Views.MessageBoard"
              xmlns:viewmodel="clr-namespace:BananaProject.ViewModel"
+             xmlns:models="clr-namespace:BananaProject.Models"
              x:DataType="viewmodel:MessageViewModel"
              Title="MessageBoard">
     <Grid RowDefinitions="*">
-        <CollectionView ItemsSource="{Binding Posts}">
+        <CollectionView> <!--ItemsSource="{Binding Posts}">-->
+            <CollectionView.ItemsSource>
+                <x:Array Type="{x:Type models:Message}">
+                <models:Message
+                    Author="Jac"
+                    Content="Testing!" />
+                <models:Message
+                    Author="Maya"
+                    Content="Testing!" />
+                <models:Message
+                    Author="boom boom"
+                    Content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                    mollit anim id est laborum" />
+        </x:Array>
+
+            </CollectionView.ItemsSource>
+
             <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Grid Padding="0, 5">
+                <DataTemplate x:DataType="models:Message">
+                    <Grid Padding="5, 3">
                         <Frame>
                             <Grid
-                              RowDefinitions=".5*, .5*"
-                              ColumnDefinitions=".2*, *"
-                                BindableLayout.ItemsSource="{Binding .}">
-
-                                <Label Text="{Binding Value}"></Label>
-                                <Label Text="{Binding Value}"></Label>
+                              RowDefinitions="25, *"
+                              ColumnDefinitions=".08*, *">
+                                
+                                <Label Text="{Binding Author}"
+                                       Grid.ColumnSpan="2"
+                                       FontAttributes="Bold"></Label>
+                                <Label Text="{Binding Content}"
+                                       Grid.Row="1"
+                                       Grid.Column="1"
+                                       Grid.ColumnSpan="2"></Label>
                             </Grid>
                         </Frame>
                     </Grid>
