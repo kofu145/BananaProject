@@ -4,12 +4,21 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:BananaProject"
-    Shell.FlyoutBehavior="Disabled">
+    xmlns:views="clr-namespace:BananaProject.Views"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.BackgroundColor="SeaGreen"
+    Shell.ForegroundColor="Green">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+
+    <TabBar>
+       <Tab Title="Posts">
+           <ShellContent ContentTemplate="{DataTemplate views:MessageBoard}" />
+       </Tab>
+       <Tab Title="Camera"
+            >
+           <ShellContent ContentTemplate="{DataTemplate views:CameraPage}" />
+       </Tab>
+    </TabBar>
 
 </Shell>
 
