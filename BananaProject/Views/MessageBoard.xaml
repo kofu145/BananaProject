@@ -4,8 +4,10 @@
              x:Class="BananaProject.Views.MessageBoard"
              xmlns:viewmodel="clr-namespace:BananaProject.ViewModel"
              xmlns:models="clr-namespace:BananaProject.Models"
-             x:DataType="viewmodel:MessageViewModel"
-             Title="MessageBoard">
+             x:DataType="viewmodel:MessageViewModel">
+    <Shell.TitleView>
+        <Image HorizontalOptions="Start" Source="ecologo.png"></Image>
+    </Shell.TitleView>
     <Grid RowDefinitions="*">
         <CollectionView> <!--ItemsSource="{Binding Posts}">-->
             <CollectionView.ItemsSource>

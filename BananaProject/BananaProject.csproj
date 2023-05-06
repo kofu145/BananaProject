@@ -57,6 +57,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\calendar.png" />
+	  <None Remove="Resources\Images\camera.png" />
+	  <None Remove="Resources\Images\ecologo.png" />
+	  <None Remove="Resources\Images\recycle.png" />
+	  <None Remove="Resources\Images\smile.png" />
+	  <None Remove="Resources\Images\tree.png" />
 	  <None Remove="Views\" />
 	  <None Remove="ViewModels\" />
 	  <None Remove="Content\" />

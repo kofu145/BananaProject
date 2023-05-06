@@ -11,13 +11,18 @@
 
 
     <TabBar>
-       <Tab Title="Posts">
-           <ShellContent ContentTemplate="{DataTemplate views:MessageBoard}" />
-       </Tab>
-       <Tab Title="Camera"
-            >
-           <ShellContent ContentTemplate="{DataTemplate views:CameraPage}" />
-       </Tab>
+        <Tab Title="Posts" Icon="smile.png">
+            <ShellContent ContentTemplate="{DataTemplate views:MessageBoard}" />
+        </Tab>
+        <Tab Title="Recycle?" Icon="recycle.png">
+            <ShellContent ContentTemplate="{DataTemplate views:CameraPage}" />
+        </Tab>
+        <Tab Title="Events" Icon="calendar.png">
+            <ShellContent ContentTemplate="{DataTemplate views:CameraPage}" />
+        </Tab>
+        <Tab Title="Footprint" Icon="tree.png">
+            <ShellContent ContentTemplate="{DataTemplate views:CameraPage}" />
+        </Tab>
     </TabBar>
 
 </Shell>
