@@ -13,7 +13,7 @@ namespace BananaProject.ViewModels
     {
 
         [ObservableProperty]
-        Image image;
+        Image mainImage;
 
         public CameraViewModel()
         {
@@ -21,7 +21,7 @@ namespace BananaProject.ViewModels
         }
 
         [RelayCommand]
-        public async void TakePhoto()
+        async Task TakePhoto()
         {
             if (MediaPicker.Default.IsCaptureSupported)
             {
@@ -43,7 +43,7 @@ namespace BananaProject.ViewModels
                     {
                         using (var memoryStream = new MemoryStream(result.Content.ReadAsByteArrayAsync().Result))
                         {
-                            this.Image = new Image
+                            this.MainImage = new Image
                             {
                                 Source = ImageSource.FromStream(() => memoryStream)
                             };

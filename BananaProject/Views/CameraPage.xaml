@@ -20,14 +20,14 @@
     </Shell.TitleView>
 
     <Grid RowDefinitions=".8*, .2*">
-        <Image Source="{Binding Image}"
+        <Image Source="{Binding MainImage}"
                Aspect="AspectFill">
             
         </Image>
 
         <Button Text="Analyze!"
                 Grid.Row="1"
-                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:CameraViewModel}}, Path=TakePhotoCommand}}"
-            CommandParameter="{Binding .}"></Button>
+                Command= "{Binding Source={RelativeSource AncestorType={x:Type viewmodel:CameraViewModel}}, Path=TakePhotoCommand}"
+                CommandParameter="{Binding .}"></Button>
     </Grid>
 </ContentPage>
