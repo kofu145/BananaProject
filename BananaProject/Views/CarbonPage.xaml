@@ -6,12 +6,11 @@
              xmlns:models="clr-namespace:BananaProject.Models"
              x:DataType="viewmodel:CarbonViewModel">
     <Grid Margin="10" ColumnSpacing="15" RowDefinitions="auto,*,auto,auto,auto,auto,auto,auto" RowSpacing="10" ColumnDefinitions="auto, *, auto">
-        <Label Grid.Row="0" Margin="10" Grid.ColumnSpan="3" FontSize="40" HorizontalOptions="Center" Text="Carbon Footprint Calculator"></Label>
+        <Label Grid.Row="0" Margin="0" Grid.ColumnSpan="3" FontSize="40" HorizontalOptions="Center" Text="Carbon Footprint Calculator"></Label>
         <Frame Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Margin="10" Padding="10">
             <Label TextColor="DarkGray" HorizontalOptions="Center" LineBreakMode="WordWrap">
                 <Label.Text>
-                    Enter the amount you pay every month for each of the following to get an estimate of how much carbon dioxide you emit into the atmosphere every year. 
-                    This model was developed using data from the United States Environmental Protection Agency, and is intended to give a rough estimate of carbon emissions using only these 4 key factors.
+                    Enter the amount you pay every month for each of the following to get an estimate of how much carbon dioxide you emit into the atmosphere every year. &#10;&#10;This model was developed using data from the United States Environmental Protection Agency, and is intended to give a rough estimate of carbon emissions using only these 4 key factors.
                 </Label.Text>
             </Label>
         </Frame>
@@ -35,7 +34,7 @@
         <Frame VerticalOptions="Center" Grid.Row="4" Grid.Column="1" Padding="5">
             <Entry Keyboard="Numeric" VerticalOptions="Center" FontSize="20" Grid.Row="4" Grid.Column="1" x:Name="oil" Placeholder="$"></Entry>
         </Frame>
-        <Label FontSize="20" VerticalOptions="Center" Grid.Row="4" Grid.Column="2" Text="billed monthly"></Label>
+        <Label FontSize="20" VerticalOptions="Center" Grid.Row="4" Grid.Column="2" Text="per month"></Label>
 
 
         <Label FontSize="20" VerticalOptions="Center" Grid.Row="5" Grid.Column="0" Text="Propane:"></Label>
@@ -50,7 +49,7 @@
             <Label FontSize="12" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" HorizontalOptions="Center" x:Name="textForCarbon" Text="pounds of CO2 per year"></Label>
 
             <Label FontSize="35" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1" HorizontalOptions="Center" x:Name="treesOfCarbon" Text="0"></Label>
-            <Label FontSize="12" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" HorizontalOptions="Center" x:Name="textForTrees" Text="trees-worth of carbon"></Label>
+            <Label FontSize="12" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" HorizontalOptions="Center" x:Name="textForTrees" Text="trees-worth of carbon per year"></Label>
         </Grid>
         
         

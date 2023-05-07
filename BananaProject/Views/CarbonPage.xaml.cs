@@ -64,15 +64,11 @@ public partial class CarbonPage : ContentPage
         };
     }
 
-    private void CommandEnter(object sender, EventArgs e)
-	{
-		Entry input = (Entry)sender;
-		input.Unfocus();
-	}
 	private void UpdateResult()
 	{
         double totalPoundsOfCarbon = (ngasTocarbon + electTocarbon + oilTocarbon + propaneTocarbon);
         poundsOfCarbon.Text = totalPoundsOfCarbon.ToString();
         treesOfCarbon.Text = ((int)(totalPoundsOfCarbon/48)).ToString();
+        this.Unfocus();
     }
 }
