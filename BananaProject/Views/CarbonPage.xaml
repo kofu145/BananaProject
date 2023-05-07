@@ -5,6 +5,19 @@
              xmlns:viewmodel="clr-namespace:BananaProject.ViewModels"
              xmlns:models="clr-namespace:BananaProject.Models"
              x:DataType="viewmodel:CarbonViewModel">
+
+    <Shell.TitleView>
+        <HorizontalStackLayout 
+            Margin="-50, 0, 0, 0"
+            HorizontalOptions="Start">
+            <Image 
+                Scale=".55" 
+                Source="ecologo.png"
+            ></Image>
+        </HorizontalStackLayout>
+
+    </Shell.TitleView>
+    
     <Grid Margin="10" ColumnSpacing="15" RowDefinitions="auto,*,auto,auto,auto,auto,auto,auto" RowSpacing="10" ColumnDefinitions="auto, *, auto">
         <Label Grid.Row="0" Margin="0" Grid.ColumnSpan="3" FontSize="40" HorizontalOptions="Center" Text="Carbon Footprint Calculator"></Label>
         <Frame Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Margin="10" Padding="10">
