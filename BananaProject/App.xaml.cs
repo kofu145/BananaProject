@@ -1,4 +1,7 @@
-﻿namespace BananaProject;
+﻿using BananaProject.ViewModels;
+using BananaProject.Views;
+
+namespace BananaProject;
 
 public partial class App : Application
 {
@@ -6,7 +9,7 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		MainPage = new AppShell();
+		MainPage = new EntryPage(new EntryViewModel());
 	}
 }
 

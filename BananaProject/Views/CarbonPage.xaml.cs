@@ -1,8 +1,3 @@
-using Android.Icu.Util;
-using Javax.Security.Auth;
-using System.Globalization;
-using Xamarin.Google.Crypto.Tink.Shaded.Protobuf;
-
 namespace BananaProject.Views;
 
 public partial class CarbonPage : ContentPage

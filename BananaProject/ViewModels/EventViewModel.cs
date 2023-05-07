@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BananaProject.ViewModels
 {
-    internal partial class EventViewModel : ObservableObject
+    public partial class EventViewModel : ObservableObject
     {
     }
 }

@@ -6,6 +6,18 @@
              xmlns:models="clr-namespace:BananaProject.Models"
              x:DataType="viewmodel:MessageViewModel">
 
+    <Shell.TitleView>
+        <HorizontalStackLayout 
+            Margin="-50, 0, 0, 0"
+            HorizontalOptions="Start">
+            <Image 
+                Scale=".55" 
+                Source="ecologo.png"
+            ></Image>
+        </HorizontalStackLayout>
+
+    </Shell.TitleView>
+
     <Grid RowDefinitions="*">
         <CollectionView> <!--ItemsSource="{Binding Posts}">-->
             <CollectionView.ItemsSource>

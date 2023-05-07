@@ -10,4 +10,10 @@ public partial class MessageBoard : ContentPage
 		InitializeComponent();
 		BindingContext = vm;
 	}
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        Shell.SetTabBarIsVisible(Shell.Current, true);
+    }
 }

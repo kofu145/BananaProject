@@ -10,19 +10,6 @@
     Shell.ForegroundColor="WhiteSmoke"
     Shell.TabBarBackgroundColor="WhiteSmoke">
 
-    <Shell.TitleView>
-        <HorizontalStackLayout 
-            Margin="-50, 0, 0, 0"
-            HorizontalOptions="Start">
-                <Image 
-                Scale=".55" 
-                Source="ecologo.png"
-            ></Image>
-            </HorizontalStackLayout>
-
-    </Shell.TitleView>
-
-
     <TabBar>
         <Tab Title="Posts" Icon="smile.png">
             <ShellContent ContentTemplate="{DataTemplate views:MessageBoard}" />
