@@ -8,7 +8,7 @@
 
         
 
-    <Grid RowDefinitions="*, *, .2*"
+    <!--<Grid RowDefinitions="*, *, .2*"
           ColumnDefinitions="*, *">
 
         <Entry Text="{Binding Username}"
@@ -30,10 +30,52 @@
 
         <Label Text="{Binding LoginStatus}"
                Grid.Row="2"
-               Grid.ColumnSpan="2"
-               >
+               Grid.ColumnSpan="2">
             
         </Label>
+    </Grid>-->
+
+    <Grid RowDefinitions=".2*,.2*, .1*, .1*,.1*, .3*"
+          ColumnDefinitions="*, *">
+
+        <Image Margin="20" Source="ecologo.png" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"></Image>
+
+        <Entry Text="{Binding Username}"
+               Placeholder="Username"
+               Grid.Row="2"
+               Grid.ColumnSpan="2"
+               Margin="5"
+               FontSize="20"/>
+
+        
+        <Button Text="Sign in"
+                Grid.Row="3"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                BackgroundColor="Green"
+                Margin="10"
+                x:Name="signInButton"
+            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:EntryViewModel}}, Path=AttemptSigninCommand}"
+            CommandParameter="{Binding .}">
+        </Button>
+        
+        <Button Text="Make a new account"
+                Grid.Row="4"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                BackgroundColor="Green"
+                Margin="10"
+                x:Name="newAccountButton"
+            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:EntryViewModel}}, Path=AttemptSignupCommand}"
+            CommandParameter="{Binding .}">
+        </Button>
+
+        <Label Text="{Binding LoginStatus}"
+               Grid.Row="5"
+               Grid.ColumnSpan="2"
+               HorizontalOptions="Center">
+
+        </Label>
     </Grid>
-    
+
 </ContentPage>
