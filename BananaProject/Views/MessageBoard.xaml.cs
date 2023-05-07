@@ -1,4 +1,4 @@
-﻿using BananaProject.ViewModel;
+﻿using BananaProject.ViewModels;
 
 namespace BananaProject.Views;
 

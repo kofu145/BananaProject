@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
-namespace BananaProject.ViewModel
+namespace BananaProject.ViewModels
 {
 	public partial class MessageViewModel : ObservableObject
 	{

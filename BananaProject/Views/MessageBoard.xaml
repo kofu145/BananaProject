@@ -2,12 +2,10 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BananaProject.Views.MessageBoard"
-             xmlns:viewmodel="clr-namespace:BananaProject.ViewModel"
+             xmlns:viewmodel="clr-namespace:BananaProject.ViewModels"
              xmlns:models="clr-namespace:BananaProject.Models"
              x:DataType="viewmodel:MessageViewModel">
-    <Shell.TitleView>
-        <Image HorizontalOptions="Start" Source="ecologo.png"></Image>
-    </Shell.TitleView>
+
     <Grid RowDefinitions="*">
         <CollectionView> <!--ItemsSource="{Binding Posts}">-->
             <CollectionView.ItemsSource>

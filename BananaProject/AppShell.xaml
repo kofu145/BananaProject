@@ -6,22 +6,35 @@
     xmlns:local="clr-namespace:BananaProject"
     xmlns:views="clr-namespace:BananaProject.Views"
     Shell.FlyoutBehavior="Disabled"
-    Shell.BackgroundColor="SeaGreen"
-    Shell.ForegroundColor="Green">
+    Shell.BackgroundColor="WhiteSmoke"
+    Shell.ForegroundColor="WhiteSmoke"
+    Shell.TabBarBackgroundColor="WhiteSmoke">
+
+    <Shell.TitleView>
+        <HorizontalStackLayout 
+            Margin="-50, 0, 0, 0"
+            HorizontalOptions="Start">
+                <Image 
+                Scale=".55" 
+                Source="ecologo.png"
+            ></Image>
+            </HorizontalStackLayout>
+
+    </Shell.TitleView>
 
 
     <TabBar>
         <Tab Title="Posts" Icon="smile.png">
             <ShellContent ContentTemplate="{DataTemplate views:MessageBoard}" />
         </Tab>
-        <Tab Title="Recycle?" Icon="recycle.png">
+        <Tab Title="Analyzer" Icon="recycle.png">
             <ShellContent ContentTemplate="{DataTemplate views:CameraPage}" />
         </Tab>
         <Tab Title="Events" Icon="calendar.png">
-            <ShellContent ContentTemplate="{DataTemplate views:CameraPage}" />
+            <ShellContent ContentTemplate="{DataTemplate views:EventPage}" />
         </Tab>
         <Tab Title="Footprint" Icon="tree.png">
-            <ShellContent ContentTemplate="{DataTemplate views:CameraPage}" />
+            <ShellContent ContentTemplate="{DataTemplate views:CarbonPage}" />
         </Tab>
     </TabBar>
 

@@ -1,4 +1,4 @@
-﻿using BananaProject.ViewModel;
+﻿using BananaProject.ViewModels;
 using BananaProject.Views;
 using Microsoft.Extensions.Logging;
 
