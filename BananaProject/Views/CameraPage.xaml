@@ -4,7 +4,8 @@
              x:Class="BananaProject.Views.CameraPage"
              xmlns:viewmodel="clr-namespace:BananaProject.ViewModels"
              xmlns:models="clr-namespace:BananaProject.Models"
-             x:DataType="viewmodel:CameraViewModel">
+             x:DataType="viewmodel:CameraViewModel"
+             BackgroundColor="White">
 
     <Shell.TitleView>
         <HorizontalStackLayout 
@@ -17,11 +18,16 @@
         </HorizontalStackLayout>
 
     </Shell.TitleView>
-    
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+
+    <Grid RowDefinitions=".8*, .2*">
+        <Image Source="{Binding Image}"
+               Aspect="AspectFill">
+            
+        </Image>
+
+        <Button Text="Analyze!"
+                Grid.Row="1"
+                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:CameraViewModel}}, Path=TakePhotoCommand}}"
+            CommandParameter="{Binding .}"></Button>
+    </Grid>
 </ContentPage>

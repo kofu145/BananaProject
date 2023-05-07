@@ -23,6 +23,8 @@ public static class MauiProgram
 		builder.Services.AddSingleton<MessageViewModel>();
 		builder.Services.AddSingleton<EventPage>();
         builder.Services.AddSingleton<EventViewModel>();
+		builder.Services.AddSingleton<CameraPage>();
+		builder.Services.AddSingleton<CameraViewModel>();
 
 		builder.Services.AddTransient<PostEntryPage>();
 		builder.Services.AddTransient<PostEntryViewModel>();

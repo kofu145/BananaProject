@@ -4,7 +4,8 @@
              x:Class="BananaProject.Views.EntryPage"
              xmlns:viewmodel="clr-namespace:BananaProject.ViewModels"
              xmlns:models="clr-namespace:BananaProject.Models"
-             x:DataType="viewmodel:EntryViewModel">
+             x:DataType="viewmodel:EntryViewModel"
+             BackgroundColor="White">
 
         
 
