@@ -17,10 +17,7 @@ namespace BananaProject.ViewModels
 
         public CameraViewModel()
         {
-            Image = new Image
-            {
-                Source = ImageSource.FromResource("BananaProject.Images.camera.png")
-            };
+           
         }
 
         [RelayCommand]

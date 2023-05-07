@@ -20,7 +20,8 @@
     </Shell.TitleView>
 
     <Grid RowDefinitions=".8*, .2*">
-        <Image Source="{Binding Image}">
+        <Image Source="{Binding Image}"
+               Aspect="AspectFill">
             
         </Image>
 
