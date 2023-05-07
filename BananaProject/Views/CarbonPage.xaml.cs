@@ -25,8 +25,13 @@ public partial class CarbonPage : ContentPage
 
 		ngas.Completed += (sender, e) =>
 		{
-            ngasBill = Convert.ToInt32(ngas.Text);
-            ngasTocarbon = (ngasBill) * CARBON_EMISSIONS_PER_DOLLAR_NATURAL_GAS;
+            if (ngas.Text != "")
+            {
+                ngasBill = Convert.ToInt32(ngas.Text);
+                ngasTocarbon = (ngasBill) * CARBON_EMISSIONS_PER_DOLLAR_NATURAL_GAS;
+            }
+            else
+                ngasTocarbon = 0;
             ngas.Unfocus();
             elect.Focus();
             UpdateResult();
@@ -34,8 +39,13 @@ public partial class CarbonPage : ContentPage
 
 		elect.Completed += (sender, e) =>
 		{
-            electBill = Convert.ToInt32(elect.Text);
-            electTocarbon = (electBill) * CARBON_EMISSIONS_PER_DOLLAR_ELECTRICITY;
+            if (elect.Text != "")
+            {
+                electBill = Convert.ToInt32(elect.Text);
+                electTocarbon = (electBill) * CARBON_EMISSIONS_PER_DOLLAR_ELECTRICITY;
+            }
+            else
+                electTocarbon = 0;
             elect.Unfocus();
 			oil.Focus();
             UpdateResult();
@@ -43,23 +53,36 @@ public partial class CarbonPage : ContentPage
 
         oil.Completed += (sender, e) =>
         {
-            oilBill = Convert.ToInt32(oil.Text);
-            oilTocarbon = (oilBill) * CARBON_EMISSIONS_PER_DOLLAR_FUEL_OIL;
+            if (oil.Text != "")
+            {
+                oilBill = Convert.ToInt32(oil.Text);
+                oilTocarbon = (oilBill) * CARBON_EMISSIONS_PER_DOLLAR_FUEL_OIL;
+            }
+            else
+                oilTocarbon = 0;
             oil.Unfocus();
             propane.Focus();
+
             UpdateResult();
         };
 
         propane.Completed += (sender, e) =>
 		{
-            propaneBill = Convert.ToInt32(propane.Text);
-            propaneTocarbon = (propaneBill) * CARBON_EMISSIONS_PER_DOLLAR_PROPANE;
-            propane.Unfocus();
+            if (propane.Text != "")
+            {
+                propaneBill = Convert.ToInt32(propane.Text);
+                propaneTocarbon = (propaneBill) * CARBON_EMISSIONS_PER_DOLLAR_PROPANE;
+            }
+            else
+                propaneTocarbon = 0;
+
             UpdateResult();
         };
     }
 
-	private void UpdateResult()
+
+
+    private void UpdateResult()
 	{
         double totalPoundsOfCarbon = (ngasTocarbon + electTocarbon + oilTocarbon + propaneTocarbon);
         poundsOfCarbon.Text = totalPoundsOfCarbon.ToString();

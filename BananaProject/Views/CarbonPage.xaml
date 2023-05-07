@@ -5,9 +5,27 @@
              xmlns:viewmodel="clr-namespace:BananaProject.ViewModels"
              xmlns:models="clr-namespace:BananaProject.Models"
              x:DataType="viewmodel:CarbonViewModel">
-    <Grid Margin="10" ColumnSpacing="15" RowDefinitions="auto,*,auto,auto,auto,auto,auto,auto" RowSpacing="10" ColumnDefinitions="auto, *, auto">
-        <Label Grid.Row="0" Margin="0" Grid.ColumnSpan="3" FontSize="40" HorizontalOptions="Center" Text="Carbon Footprint Calculator"></Label>
-        <Frame Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Margin="10" Padding="10">
+
+    <Shell.TitleView>
+        <HorizontalStackLayout 
+            Margin="-50, 0, 0, 0"
+            HorizontalOptions="Start">
+            <Image 
+                Scale=".55" 
+                Source="ecologo.png"
+            ></Image>
+        </HorizontalStackLayout>
+    </Shell.TitleView>
+    
+    <Grid Margin="10" ColumnSpacing="15" RowDefinitions=".33*,*,auto,auto,auto,auto,auto,auto" RowSpacing="10" ColumnDefinitions="auto, *, auto">
+        <Label Grid.Row="0" 
+               Margin="0" 
+               Grid.ColumnSpan="3" 
+               FontSize="30" 
+               HorizontalOptions="Center" 
+               Text="Carbon Footprint Calculator"
+               ></Label>
+        <Frame Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Margin="8" Padding="10">
             <Label TextColor="DarkGray" HorizontalOptions="Center" LineBreakMode="WordWrap">
                 <Label.Text>
                     Enter the amount you pay every month for each of the following to get an estimate of how much carbon dioxide you emit into the atmosphere every year. &#10;&#10;This model was developed using data from the United States Environmental Protection Agency, and is intended to give a rough estimate of carbon emissions using only these 4 key factors.
@@ -41,7 +59,7 @@
         <Frame VerticalOptions="Center" Grid.Row="5" Grid.Column="1" Padding="5">
             <Entry Keyboard="Numeric" VerticalOptions="Center" FontSize="20" Grid.Row="5" Grid.Column="1" x:Name="propane" Placeholder="$"></Entry>
         </Frame>
-        <Label FontSize="20" VerticalOptions="Center" Grid.Row="5" Grid.Column="2" Text="billed monthly"></Label>
+        <Label FontSize="20" VerticalOptions="Center" Grid.Row="5" Grid.Column="2" Text="per month"></Label>
         
 
         <Grid Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" ColumnDefinitions="*,*" RowDefinitions="auto,auto">

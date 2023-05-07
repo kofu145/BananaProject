@@ -12,6 +12,11 @@ namespace BananaProject.Models
 		{
 			get; set;
 		}
+
+		public int Likes
+		{
+			get; set;
+		}
 		public Message()
 		{
 		}

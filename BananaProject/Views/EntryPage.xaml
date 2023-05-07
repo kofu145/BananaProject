@@ -5,16 +5,35 @@
              xmlns:viewmodel="clr-namespace:BananaProject.ViewModels"
              xmlns:models="clr-namespace:BananaProject.Models"
              x:DataType="viewmodel:EntryViewModel">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Button Text="Go to main page"
-                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:EntryViewModel}}, Path=GoToMainCommand}}"
-                CommandParameter="{Binding .}"
-                >
-                
+
+        
+
+    <Grid RowDefinitions="*, *, .2*"
+          ColumnDefinitions="*, *">
+
+        <Entry Text="{Binding Username}"
+               Placeholder="Username"
+               Grid.ColumnSpan="2"/>
+
+        <Button Text="Sign up"
+                Grid.Row="1"
+                Grid.Column="0"
+            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:EntryViewModel}}, Path=AttemptSignupCommand}}"
+            CommandParameter="{Binding .}">
         </Button>
-    </VerticalStackLayout>
+        <Button Text="Sign in"
+                Grid.Row="1"
+                Grid.Column="1"
+            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:EntryViewModel}}, Path=AttemptSigninCommand}}"
+            CommandParameter="{Binding .}">
+        </Button>
+
+        <Label Text="{Binding LoginStatus}"
+               Grid.Row="2"
+               Grid.ColumnSpan="2"
+               >
+            
+        </Label>
+    </Grid>
+    
 </ContentPage>

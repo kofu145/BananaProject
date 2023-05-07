@@ -15,34 +15,14 @@
                 Source="ecologo.png"
             ></Image>
         </HorizontalStackLayout>
-
     </Shell.TitleView>
 
     <Grid RowDefinitions="*">
-        <CollectionView> <!--ItemsSource="{Binding Posts}">-->
-            <CollectionView.ItemsSource>
-                <x:Array Type="{x:Type models:Message}">
-                <models:Message
-                    Author="Jac"
-                    Content="Testing!" />
-                <models:Message
-                    Author="Maya"
-                    Content="Testing!" />
-                <models:Message
-                    Author="boom boom"
-                    Content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                    mollit anim id est laborum" />
-        </x:Array>
-
-            </CollectionView.ItemsSource>
+        <CollectionView ItemsSource="{Binding Posts}">
 
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:Message">
-                    <Grid Padding="5, 3">
+                    <Grid Padding="10, 5">
                         <Frame>
                             <Grid
                               RowDefinitions="25, *"
@@ -64,5 +44,17 @@
             </CollectionView.ItemTemplate>
 
         </CollectionView>
+
+        <Button Text="Post"
+                Margin="300, 620, 10, 15"
+                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MessageViewModel}}, Path=RedirectPostEntryCommand}}"
+            CommandParameter="{Binding .}">
+            
+        </Button>
+        <Button Text="Update"
+                Margin="200, 620, 100, 15"
+                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MessageViewModel}}, Path=UpdateMessagesCommand}}"
+                CommandParameter="{Binding .}">
+        </Button>
     </Grid>
 </ContentPage>
