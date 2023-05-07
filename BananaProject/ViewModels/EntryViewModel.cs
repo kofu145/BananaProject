@@ -32,12 +32,15 @@ namespace BananaProject.ViewModels
                 {"username", Username},
             };
             var data = new FormUrlEncodedContent(payload);
-            var result = await RequestsClient.httpClient.PostAsync(RequestsClient.Server + "/signup", data);
-            var stringContent = result.Content.ReadAsStringAsync();
-            stringContent.Wait();
-            dynamic jsonResult = JsonConvert.DeserializeObject<dynamic>(stringContent.Result);
+            using (var result = await RequestsClient.httpClient.PostAsync(RequestsClient.Server + "/signup", data))
+            {
+                var stringContent = result.Content.ReadAsStringAsync();
+                stringContent.Wait();
+                dynamic jsonResult = JsonConvert.DeserializeObject<dynamic>(stringContent.Result);
 
-            LoginStatus = jsonResult.message;
+                LoginStatus = jsonResult.message;
+            }
+                
         }
 
         [RelayCommand]
@@ -48,23 +51,26 @@ namespace BananaProject.ViewModels
                 {"username", Username},
             };
             var data = new FormUrlEncodedContent(payload);
-            var result = await RequestsClient.httpClient.PostAsync(RequestsClient.Server + "/login", data);
-            var stringContent = result.Content.ReadAsStringAsync();
-            stringContent.Wait();
-            dynamic jsonResult = JsonConvert.DeserializeObject<dynamic>(stringContent.Result);
-            string authToken = jsonResult.auth;
-
-            if (result.StatusCode == HttpStatusCode.OK)
+            using (var result = await RequestsClient.httpClient.PostAsync(RequestsClient.Server + "/login", data))
             {
+                var stringContent = result.Content.ReadAsStringAsync();
+                stringContent.Wait();
+                dynamic jsonResult = JsonConvert.DeserializeObject<dynamic>(stringContent.Result);
+                string authToken = jsonResult.auth;
 
-                RequestsClient.Username = Username;
-                RequestsClient.authToken = authToken;
-                App.Current.MainPage = new AppShell();
+                if (result.StatusCode == HttpStatusCode.OK)
+                {
+
+                    RequestsClient.Username = Username;
+                    RequestsClient.authToken = authToken;
+                    App.Current.MainPage = new AppShell();
+                }
+                else
+                {
+                    LoginStatus = jsonResult.message;
+                }
             }
-            else
-            {
-                LoginStatus = jsonResult.message;
-            }
+            
         }
 
         [RelayCommand]
