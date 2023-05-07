@@ -17,22 +17,21 @@ public partial class CarbonPage : ContentPage
     double oilTocarbon;
     double propaneTocarbon;
 
+    const double CARBON_EMISSIONS_PER_DOLLAR_NATURAL_GAS = 3071 / 23;
+    const double CARBON_EMISSIONS_PER_DOLLAR_ELECTRICITY = 5384 / 44;
+    const double CARBON_EMISSIONS_PER_DOLLAR_FUEL_OIL = 4848 / 72;
+    const double CARBON_EMISSIONS_PER_DOLLAR_PROPANE = 2243 / 37;
+
+
     public CarbonPage()
 	{
-		InitializeComponent();
-
-		// get current week as an int
-		DateTime current = System.DateTime.Today;
-		System.Globalization.Calendar cal = CultureInfo.CurrentCulture.Calendar;
-		int curWeek = cal.GetWeekOfYear(current, CalendarWeekRule.FirstDay, DayOfWeek.Sunday);
-
-		
+		InitializeComponent();	
 
 
 		ngas.Completed += (sender, e) =>
 		{
             ngasBill = Convert.ToInt32(ngas.Text);
-            ngasTocarbon = (ngasBill) * (3071) / 23;
+            ngasTocarbon = (ngasBill) * CARBON_EMISSIONS_PER_DOLLAR_NATURAL_GAS;
             ngas.Unfocus();
             elect.Focus();
             UpdateResult();
@@ -41,7 +40,7 @@ public partial class CarbonPage : ContentPage
 		elect.Completed += (sender, e) =>
 		{
             electBill = Convert.ToInt32(elect.Text);
-            electTocarbon = (electBill) * 5384 / 44;
+            electTocarbon = (electBill) * CARBON_EMISSIONS_PER_DOLLAR_ELECTRICITY;
             elect.Unfocus();
 			oil.Focus();
             UpdateResult();
@@ -50,7 +49,7 @@ public partial class CarbonPage : ContentPage
         oil.Completed += (sender, e) =>
         {
             oilBill = Convert.ToInt32(oil.Text);
-            oilTocarbon = (oilBill) * 4848 / 72;
+            oilTocarbon = (oilBill) * CARBON_EMISSIONS_PER_DOLLAR_FUEL_OIL;
             oil.Unfocus();
             propane.Focus();
             UpdateResult();
@@ -59,13 +58,10 @@ public partial class CarbonPage : ContentPage
         propane.Completed += (sender, e) =>
 		{
             propaneBill = Convert.ToInt32(propane.Text);
-            propaneTocarbon = (propaneBill) * 2243 / 37;
+            propaneTocarbon = (propaneBill) * CARBON_EMISSIONS_PER_DOLLAR_PROPANE;
             propane.Unfocus();
             UpdateResult();
         };
-
-
-        
     }
 
     private void CommandEnter(object sender, EventArgs e)
@@ -76,6 +72,7 @@ public partial class CarbonPage : ContentPage
 	private void UpdateResult()
 	{
         double totalPoundsOfCarbon = (ngasTocarbon + electTocarbon + oilTocarbon + propaneTocarbon);
-        result.Text = totalPoundsOfCarbon.ToString() + " pounds of CO2 every year, or roughly " + (totalPoundsOfCarbon / 48).ToString() + " trees!";
+        poundsOfCarbon.Text = totalPoundsOfCarbon.ToString();
+        treesOfCarbon.Text = ((int)(totalPoundsOfCarbon/48)).ToString();
     }
 }
