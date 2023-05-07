@@ -4,7 +4,8 @@
              x:Class="BananaProject.Views.CarbonPage"
              xmlns:viewmodel="clr-namespace:BananaProject.ViewModels"
              xmlns:models="clr-namespace:BananaProject.Models"
-             x:DataType="viewmodel:CarbonViewModel">
+             x:DataType="viewmodel:CarbonViewModel"
+             BackgroundColor="White">
 
     <Shell.TitleView>
         <HorizontalStackLayout 

@@ -4,7 +4,8 @@
              x:Class="BananaProject.Views.MessageBoard"
              xmlns:viewmodel="clr-namespace:BananaProject.ViewModels"
              xmlns:models="clr-namespace:BananaProject.Models"
-             x:DataType="viewmodel:MessageViewModel">
+             x:DataType="viewmodel:MessageViewModel"
+             BackgroundColor="White">
 
     <Shell.TitleView>
         <HorizontalStackLayout 
