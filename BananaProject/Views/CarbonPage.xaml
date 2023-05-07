@@ -6,42 +6,46 @@
              xmlns:models="clr-namespace:BananaProject.Models"
              x:DataType="viewmodel:CarbonViewModel">
     <Grid Margin="10" ColumnSpacing="15" RowDefinitions="auto,auto,auto,auto,auto,auto,auto,auto" RowSpacing="10" ColumnDefinitions="auto, *, auto">
-        <Label Grid.Row="0" Grid.ColumnSpan="2" FontSize="30" HorizontalOptions="Center" Text="Carbon Footprint Calculator"></Label>
+        <Label Grid.Row="0" Margin="10" Grid.ColumnSpan="3" FontSize="40" HorizontalOptions="Center" Text="Carbon Footprint Calculator"></Label>
+        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" TextColor="DarkGray" HorizontalOptions="Center"
+               Text="Enter the amount you pay every month for each of the following to get an estimate of how much Carbon Dioxide you emit into the atmosphere every year.">
+                
+        </Label>
         
-        <Label FontSize="15" VerticalOptions="Center" Grid.Row="1" Grid.Column="0" Text="Natural Gas:"></Label>
-        <Frame VerticalOptions="Center" Grid.Row="1" Grid.Column="1" Padding="5">
+        <Label FontSize="20" VerticalOptions="Center" Grid.Row="2" Grid.Column="0" Text="Natural Gas:"></Label>
+        <Frame VerticalOptions="Center" Grid.Row="2" Grid.Column="1" Padding="5">
             <Entry Keyboard="Numeric" x:Name="ngas" FontSize="20" Placeholder="$"></Entry>
         </Frame>
-        <Label VerticalOptions="Center" Grid.Row="1" Grid.Column="2" Text="billed monthly"></Label>
+        <Label FontSize="20" VerticalOptions="Center" Grid.Row="2" Grid.Column="2" Text="billed monthly"></Label>
 
 
-        <Label FontSize="15" VerticalOptions="Center" Grid.Row="2" Grid.Column="0" Text="Electricity:"></Label>
-        <Frame VerticalOptions="Center" Grid.Row="2" Grid.Column="1" Padding="5">
+        <Label FontSize="20" VerticalOptions="Center" Grid.Row="3" Grid.Column="0" Text="Electricity:"></Label>
+        <Frame VerticalOptions="Center" Grid.Row="3" Grid.Column="1" Padding="5">
             <Entry Keyboard="Numeric" x:Name="elect" FontSize="20" Placeholder="$"></Entry>
         </Frame>
-        <Label VerticalOptions="Center" Grid.Row="2" Grid.Column="2" Text="billed monthly"></Label>
+        <Label FontSize="20" VerticalOptions="Center" Grid.Row="3" Grid.Column="2" Text="billed monthly"></Label>
 
 
-        <Label FontSize="15" VerticalOptions="Center" Grid.Row="3" Grid.Column="0" Text="Fuel Oil:"></Label>
-        <Frame VerticalOptions="Center" Grid.Row="3" Grid.Column="1" Padding="5">
-            <Entry Keyboard="Numeric" VerticalOptions="Center" FontSize="20" Grid.Row="3" Grid.Column="1" x:Name="oil" Placeholder="$"></Entry>
-        </Frame>
-        <Label VerticalOptions="Center" Grid.Row="3" Grid.Column="2" Text="billed monthly"></Label>
-
-
-        <Label FontSize="15" VerticalOptions="Center" Grid.Row="4" Grid.Column="0" Text="Propane:"></Label>
+        <Label FontSize="20" VerticalOptions="Center" Grid.Row="4" Grid.Column="0" Text="Fuel Oil:"></Label>
         <Frame VerticalOptions="Center" Grid.Row="4" Grid.Column="1" Padding="5">
-            <Entry Keyboard="Numeric" VerticalOptions="Center" FontSize="20" Grid.Row="4" Grid.Column="1" x:Name="propane" Placeholder="$"></Entry>
+            <Entry Keyboard="Numeric" VerticalOptions="Center" FontSize="20" Grid.Row="4" Grid.Column="1" x:Name="oil" Placeholder="$"></Entry>
         </Frame>
-        <Label VerticalOptions="Center" Grid.Row="4" Grid.Column="2" Text="billed monthly"></Label>
+        <Label FontSize="20" VerticalOptions="Center" Grid.Row="4" Grid.Column="2" Text="billed monthly"></Label>
+
+
+        <Label FontSize="20" VerticalOptions="Center" Grid.Row="5" Grid.Column="0" Text="Propane:"></Label>
+        <Frame VerticalOptions="Center" Grid.Row="5" Grid.Column="1" Padding="5">
+            <Entry Keyboard="Numeric" VerticalOptions="Center" FontSize="20" Grid.Row="5" Grid.Column="1" x:Name="propane" Placeholder="$"></Entry>
+        </Frame>
+        <Label FontSize="20" VerticalOptions="Center" Grid.Row="5" Grid.Column="2" Text="billed monthly"></Label>
         
 
         <Grid Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" ColumnDefinitions="*,*" RowDefinitions="auto,auto">
-            <Label FontSize="30" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" HorizontalOptions="Center" x:Name="poundsOfCarbon" Text="0"></Label>
+            <Label FontSize="35" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" HorizontalOptions="Center" x:Name="poundsOfCarbon" Text="0"></Label>
             <Label FontSize="12" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" HorizontalOptions="Center" x:Name="textForCarbon" Text="pounds of CO2 per year"></Label>
 
-            <Label FontSize="30" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1" HorizontalOptions="Center" x:Name="treesOfCarbon" Text="0"></Label>
-            <Label FontSize="12" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" HorizontalOptions="Center" x:Name="textForTrees" Text="trees of carbon"></Label>
+            <Label FontSize="35" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1" HorizontalOptions="Center" x:Name="treesOfCarbon" Text="0"></Label>
+            <Label FontSize="12" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" HorizontalOptions="Center" x:Name="textForTrees" Text="trees-worth of carbon"></Label>
         </Grid>
         
         
