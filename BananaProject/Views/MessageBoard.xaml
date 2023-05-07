@@ -46,13 +46,17 @@
         </CollectionView>
 
         <Button Text="Post"
-                Margin="300, 620, 10, 15"
+                Margin="300, 600, 10, 15"
+                MinimumHeightRequest="100"
+                MinimumWidthRequest="100"
                 Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MessageViewModel}}, Path=RedirectPostEntryCommand}}"
             CommandParameter="{Binding .}">
             
         </Button>
         <Button Text="Update"
-                Margin="200, 620, 100, 15"
+                Margin="200, 600, 100, 15"
+                MinimumHeightRequest="100"
+                MinimumWidthRequest="100"
                 Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MessageViewModel}}, Path=UpdateMessagesCommand}}"
                 CommandParameter="{Binding .}">
         </Button>

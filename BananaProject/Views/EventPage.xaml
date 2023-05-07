@@ -17,10 +17,18 @@
         </HorizontalStackLayout>
 
     </Shell.TitleView>
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <Grid RowDefinitions=".2*, .8*">
+        <Label FontSize="40" VerticalOptions="Center" HorizontalOptions="Center" Margin="10">
+            <Label.Text>
+                Animal Fact of the Day!
+            </Label.Text>
+        </Label>
+        <Frame Grid.Row="1" Margin="10" Padding="20" HorizontalOptions="Center" VerticalOptions="Center">
+            <Label FontSize="30" x:Name="factOfTheWeekBox" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label.Text>
+                    Today's SAT word of the day is banana.
+                </Label.Text>
+            </Label>
+        </Frame>
+    </Grid>
 </ContentPage>
